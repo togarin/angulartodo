@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -18,7 +18,7 @@ ul {
   list-style: none;
 }
 
-input{
+input {
   display: block;
   width: 50%;
   padding: 0.4rem;
@@ -34,20 +34,26 @@ input{
   padding: 0 1rem;
 }
 
+.todo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
 .btn {
   display: inline-block;
   border: none;
   background-color: #333333;
-  color:#fff;
+  color: #fff;
   outline: none;
   font-size: 1rem;
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;
   margin-right: 0.5rem;
   &:disabled {
     background: #6e6e6e;
     color: #fff;
   }
-  &:hover:not(:disabled){
-    opacity: .8;
+  &:hover:not(:disabled) {
+    opacity: 0.8;
   }
 }

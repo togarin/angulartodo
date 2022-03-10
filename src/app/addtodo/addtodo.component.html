@@ -10,9 +10,12 @@
   <ul *ngIf="todos.length; else isEmpty">
     <li class="todo" *ngFor="let todo of todos">
       <span>{{ todo.todoTitle }}</span>
-      <button class="btn btn-remove" (click)="edit(todo)">Edit ToDo</button>
-      <button class="btn btn-remove" (click)="delete(todo)">Remove ToDo</button>
-
+      <span>
+        <button class="btn btn-remove" (click)="edit(todo)">Edit ToDo</button>
+        <button class="btn btn-remove" (click)="delete(todo)">
+          Remove ToDo
+        </button>
+      </span>
       <ng-template #isEdit>
         <form>
           <input type="text" formControlName="todoTitle" />
