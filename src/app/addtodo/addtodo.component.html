@@ -1,0 +1,30 @@
+<div>
+  <form (ngSubmit)="onsubmit()" [formGroup]="form">
+    <input type="text" formControlName="todoTitle" />
+    <button class="btn btn-block" type="submit" [disabled]="form.invalid">
+      Add ToDo
+    </button>
+  </form>
+</div>
+<div>
+  <ul *ngIf="todos.length; else isEmpty">
+    <li class="todo" *ngFor="let todo of todos">
+      <span>{{ todo.todoTitle }}</span>
+      <button class="btn btn-remove" (click)="edit(todo)">Edit ToDo</button>
+      <button class="btn btn-remove" (click)="delete(todo)">Remove ToDo</button>
+
+      <ng-template #isEdit>
+        <form>
+          <input type="text" formControlName="todoTitle" />
+          <button class="btn btn-block" type="submit" [disabled]="form.invalid">
+            Save
+          </button>
+          <button class="btn btn-block" type="submit">Cancel</button>
+        </form>
+      </ng-template>
+    </li>
+  </ul>
+  <ng-template #isEmpty>
+    <p>Nothing. Add new todo.</p>
+  </ng-template>
+</div>
